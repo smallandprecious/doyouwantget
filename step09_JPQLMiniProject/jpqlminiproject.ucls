@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.4" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="model.domain.Buyer" project="step09_JPQLMiniProject" 
+    file="/step09_JPQLMiniProject/src/model/domain/Buyer.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="250" width="176" x="410" y="-20"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="model.domain.Order.OrderBuilder" project="step09_JPQLMiniProject" 
+    file="/step09_JPQLMiniProject/src/model/domain/Order.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="160" width="184" x="1472" y="432"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="model.domain.Seller.SellerBuilder" project="step09_JPQLMiniProject" 
+    file="/step09_JPQLMiniProject/src/model/domain/Seller.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="232" width="209" x="944" y="432"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="model.domain.Member" project="step09_JPQLMiniProject" 
+    file="/step09_JPQLMiniProject/src/model/domain/Member.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="412" width="267" x="649" y="-20"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="model.domain.Seller" project="step09_JPQLMiniProject" 
+    file="/step09_JPQLMiniProject/src/model/domain/Seller.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="304" width="176" x="956" y="-20"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="model.domain.Product" project="step09_JPQLMiniProject" 
+    file="/step09_JPQLMiniProject/src/model/domain/Product.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="412" width="225" x="1193" y="-20"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="model.domain.Product.ProductBuilder" project="step09_JPQLMiniProject" 
+    file="/step09_JPQLMiniProject/src/model/domain/Product.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="304" width="239" x="1193" y="432"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="model.domain.Buyer.BuyerBuilder" project="step09_JPQLMiniProject" 
+    file="/step09_JPQLMiniProject/src/model/domain/Buyer.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="196" width="210" x="410" y="432"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="model.domain.Order" project="step09_JPQLMiniProject" 
+    file="/step09_JPQLMiniProject/src/model/domain/Order.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="196" width="155" x="1472" y="-20"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="model.domain.Member.MemberBuilder" project="step09_JPQLMiniProject" 
+    file="/step09_JPQLMiniProject/src/model/domain/Member.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="304" width="244" x="660" y="432"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <nesting id="11">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="3"/>  
+  </nesting>  
+  <nesting id="12">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="7"/>  
+  </nesting>  
+  <nesting id="13">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="2"/>  
+  </nesting>  
+  <nesting id="14">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="8"/>  
+  </nesting>  
+  <nesting id="15">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="10"/>  
+  </nesting>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
