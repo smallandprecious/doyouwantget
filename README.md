@@ -73,7 +73,7 @@
 #### Structure
 
 <div>
-    <img width="800" src="https://user-images.githubusercontent.com/73386460/102021241-d2d3a400-3dc1-11eb-8f59-a95aa82b25bf.PNG">
+    <img width="800" src="https://user-images.githubusercontent.com/17983434/102023939-1cc48600-3dd2-11eb-9907-4f23cdaf3a57.png">
 </div>
 
 ---
