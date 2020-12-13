@@ -230,7 +230,10 @@ COMMIT;
 
 ## INSPRATION 
 
-<div><img width="250" src = "https://user-images.githubusercontent.com/73863771/102021653-8178e400-3dc4-11eb-9a4c-18a5188283ac.png"></div>
-<div><img width="250" src = "https://user-images.githubusercontent.com/73863771/102021656-85a50180-3dc4-11eb-9fc8-8fdd78ef8422.png"></div>
-<div><img width="250" src = "https://user-images.githubusercontent.com/73863771/102021658-89388880-3dc4-11eb-88e5-c3122e95e6b8.png"></div>
+------------
+<div>
+<img width="250" src = "https://user-images.githubusercontent.com/73863771/102021653-8178e400-3dc4-11eb-9a4c-18a5188283ac.png">
+<img width="250" src = "https://user-images.githubusercontent.com/73863771/102021656-85a50180-3dc4-11eb-9fc8-8fdd78ef8422.png">
+<img width="250" src = "https://user-images.githubusercontent.com/73863771/102021658-89388880-3dc4-11eb-88e5-c3122e95e6b8.png">
+</div>
 	
