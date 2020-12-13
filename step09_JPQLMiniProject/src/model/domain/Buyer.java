@@ -35,9 +35,6 @@ public class Buyer {
 	@Column(name="buyid")
 	private String buyer_id;
 
-	@OneToMany(mappedBy = "prodid")
-	private List<Product> products;
-	
 	@Column(name="buyname")
 	private String buyname;
 
@@ -46,15 +43,15 @@ public class Buyer {
 
 	@Column(name="buyaddress")
 	private String buyaddress;
+	
+	@OneToMany(mappedBy = "prodid")
+	private List<Product> products;
 
 	@Override
 	public String toString() {
 		return "Buyer [buyer_id=" + buyer_id + ", products=" + products + ", buyname=" + buyname + ", buyphonum="
 				+ buyphonum + ", buyaddress=" + buyaddress + "]";
 	}
-
-	
-
 
 }
 
