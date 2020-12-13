@@ -22,32 +22,32 @@ public class OrderCRUDTest {
 		resultList.forEach(v->System.out.println(v));
 	}
 	
-	public void findSize(EntityManager em, int prodid) {//ㅔprodid로 size찾기 
-		List<String> resultList = em.createNativeQuery("select prodsize from product where prodid = ?", Product.class)
-				.setParameter(1, prodid).getResultList();
-		resultList.forEach(v->System.out.println(v));
-	}
-	
-	public void findProd(EntityManager em, int prodid, int buyid) { //ㅔprodid와 buyid로 product찾
-		List<Product> resultList  = em.createNativeQuery("select * from product where buyid is not null and sellid is not null", Product.class)
-				.setParameter(1, prodid).setParameter(2, buyid).getResultList();
-		if(resultList.size() != 0) {
-			System.out.println("구매를 진행합니다");
-		} else {
-			System.out.println("제품이 존재하지 않습니다");
-		}
+//	public void findSize(EntityManager em, int prodid) {//ㅔprodid로 size찾기 
+//		List<String> resultList = em.createNativeQuery("select prodsize from product where prodid = ?", Product.class)
+//				.setParameter(1, prodid).getResultList();
+//		resultList.forEach(v->System.out.println(v));
+//	}
+//	
+//	public void findProd(EntityManager em, int prodid, int buyid) { //ㅔprodid와 buyid로 product찾
+//		List<Product> resultList  = em.createNativeQuery("select * from product where buyid is not null and sellid is not null", Product.class)
+//				.setParameter(1, prodid).setParameter(2, buyid).getResultList();
+//		if(resultList.size() != 0) {
+//			System.out.println("구매를 진행합니다");
+//		} else {
+//			System.out.println("제품이 존재하지 않습니다");
+//		}
 
-	}
+//	}
 	
 	//상품 가격 변경
-	public static void updatePrice(EntityManager em, int prodid, int price) {
-		int result = em.createNativeQuery("update product set price = ? where prodid =?", Product.class).setParameter(1, price).setParameter(2,prodid).executeUpdate();
-		if(result !=0) {
-			System.out.println("---업데이트 완료---");
-		}else {
-			System.out.println("---업데이트 실패---");
-		}
-	}
+//	public static void updatePrice(EntityManager em, int prodid, int price) {
+//		int result = em.createNativeQuery("update product set price = ? where prodid =?", Product.class).setParameter(1, price).setParameter(2,prodid).executeUpdate();
+//		if(result !=0) {
+//			System.out.println("---업데이트 완료---");
+//		}else {
+//			System.out.println("---업데이트 실패---");
+//		}
+//	}
 
 	
 	// INSERT
@@ -61,16 +61,16 @@ public class OrderCRUDTest {
 			tx.begin();
 			findBuyer(em, "Nike Big Swoosh Full Zip Jacket Black Volt");
 			
-			findSize(em,230);
-			
-			findProd(em, 1, 1);
-			
-			updatePrice(em,1, 180000); 
-		
+//			findSize(em,230);
+//			
+//			findProd(em, 1, 1);
+//			
+//			updatePrice(em,1, 180000); 
+//		
 			tx.commit();
 
-			em.flush();
-			em.clear();
+//			em.flush();
+//			em.clear();
 		} catch(Exception ex) {
 			tx.rollback();
 			ex.printStackTrace();
