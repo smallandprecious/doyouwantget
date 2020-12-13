@@ -3,12 +3,15 @@ package run.test;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
+import org.junit.jupiter.api.Test;
+
 import model.domain.Seller;
 import util.PublicCommon;
 
 public class SellerCRUDTest {
 	
 	//판매자가 상품 가격 업데이트
+	@Test
 	public void updateSeller() {
 		EntityManager em = PublicCommon.getEntityManager();
 		EntityTransaction tx = em.getTransaction();
@@ -33,6 +36,7 @@ public class SellerCRUDTest {
 }
 	
 	//상품이 팔린 후 해당 상품 삭제
+	@Test
 	public void deleteSeller() {
 		EntityManager em = PublicCommon.getEntityManager();
 		EntityTransaction tx = em.getTransaction();

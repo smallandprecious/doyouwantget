@@ -14,6 +14,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -28,6 +29,7 @@ import lombok.Setter;
 @Builder
 
 @Entity
+@Table(name = "Buyer")
 public class Buyer {
 	@Id
 	@Column(name="buyid")

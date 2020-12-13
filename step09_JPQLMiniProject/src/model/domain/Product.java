@@ -13,6 +13,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -27,6 +28,7 @@ import lombok.Setter;
 
 @Builder
 @Entity
+@Table(name = "Product")
 public class Product {
 	@Id
 	@ManyToOne(fetch=FetchType.LAZY)
@@ -48,6 +50,7 @@ public class Product {
 	@Column(name="price")
 	private int price;
 
+
 	@Column(name="resellprice")
 	private int resellprice;
 
@@ -56,5 +59,6 @@ public class Product {
 		return "Product [prodid=" + prodid + ", prodname=" + prodname + ", prodsize=" + prodsize + ", brand=" + brand
 				+ ", release_date=" + release_date + ", price=" + price + ", resellprice=" + resellprice + "]";
 	}
+
 
 }
