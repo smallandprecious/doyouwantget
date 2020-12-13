@@ -264,8 +264,12 @@ product id를 불러오지 못하니 CRUD에서 각종 시나리오를 구현하
 최지수
 각 테이블 간 매핑에 있어서 관계도를 생각하지 않고 아이디어를 기반으로 생각하고 구상하다 보니 테이블 매핑이 복잡해져서 erd diagram을 구성하는 내내 고민하고 힘들었던 것 같습니다.
 
+3. 힘들었던 실제 증거 자료
 
-
-
-
+<div>
+	<img width="500" src="https://user-images.githubusercontent.com/73863771/102021658-89388880-3dc4-11eb-88e5-c3122e95e6b8.png">
+	<img width="500" src="https://user-images.githubusercontent.com/73863771/102021656-85a50180-3dc4-11eb-9fc8-8fdd78ef8422.png">
+	<img width="500" src="https://user-images.githubusercontent.com/73863771/102021658-89388880-3dc4-11eb-88e5-c3122e95e6b8.png">	
+	<img width="500" src="https://user-images.githubusercontent.com/73863771/102022002-44622100-3dc7-11eb-8f33-36c77c3e53bb.png">
+	</div>
 
