@@ -218,7 +218,7 @@ COMMIT;
         부모와 자식테이블이 뒤바뀌었기 때문이라는 것을 깨달음
     3)  수정 후 : Product(자식) <- Buyer, Seller (부모)
                   product -> sellid , buyid (fk) 추가 
-		  
+
 2. OrderCRUDTest 실행의 문제점
 
 >1. 실행결과 오류가 뜨진 않지만 결과값이 나오지 않음.
