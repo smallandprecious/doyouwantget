@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 
@@ -29,25 +30,28 @@ initialValue=1, allocationSize=50)
 @Entity
 public class Product {
 	@Id
-	@Column(name ="product_id")
-	private int product_id;
+	@OneToOne
+	@Column(name ="prodid")
+	private int prodid;
 
-	@Column(name="product_name")
-	private String product_name;
+	@Column(name="prodname")
+	private String prodname;
 
+	@Column(name="prodsize")
+	private int prodsize;
+	
 	@Column(name="brand")
 	private String brand;
 
 	@Column(name="release_date")
 	private String release_date;
-
+	
 	@Column(name="price")
 	private int price;
 
-	@OneToMany(mappedBy = "product_id")
-	private List<Seller> sellers;
-	private List<Buyer> buyers;
-
+	@Column(name="resellprice")
+	private int resellprice;
+	
 	@Override
 	public String toString() {
 		return "Product [product_id=" + product_id + ", product_name=" + product_name + ", brand=" + brand
