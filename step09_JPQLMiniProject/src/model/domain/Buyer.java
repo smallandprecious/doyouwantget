@@ -3,17 +3,9 @@ package model.domain;
 import java.util.List;
 
 import javax.persistence.Column;
-
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.ManyToOne;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -34,9 +26,6 @@ public class Buyer {
 	@Id
 	@Column(name="buyid")
 	private String buyer_id;
-
-	@OneToMany(mappedBy = "prodid")
-	private List<Product> products;
 	
 	@Column(name="buyname")
 	private String buyname;
@@ -47,6 +36,9 @@ public class Buyer {
 	@Column(name="buyaddress")
 	private String buyaddress;
 
+	@OneToMany(mappedBy = "prodid")
+	private List<Product> products;
+	
 	@Override
 	public String toString() {
 		return "Buyer [buyer_id=" + buyer_id + ", products=" + products + ", buyname=" + buyname + ", buyphonum="
