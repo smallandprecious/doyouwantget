@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
@@ -41,9 +42,11 @@ public class Product {
     price NUMBER(20) NOT NULL
 );
 	 */
-	@Column(name="buyer_id")
+
+	@JoinColumn(name="buyer_id")
 	private String buyer_id;
 	
+	@JoinColumn(name="seller_id")
 	@Column(name="seller_id")
 	private String seller_id;
 	
