@@ -27,8 +27,15 @@ initialValue=1, allocationSize=50)
 public class Product {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="PRODUCT_SEQ_GEN")
 	@Id
+	@OneToMany()
 	@Column(name="product_id")
 	private int product_id;
+	
+	@Column(name="buyer_id")
+	private String buyer_id;
+	
+	@Column(name="seller_id")
+	private String seller_id;
 	
 	@Column(name="product_name")
 	private String product_name;
@@ -41,21 +48,13 @@ public class Product {
 	
 	@Column(name="price")
 	private int price;
-	
+
 	@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("Product [product_id=");
-		builder.append(product_id);
-		builder.append(", product_name=");
-		builder.append(product_name);
-		builder.append(", brand=");
-		builder.append(brand);
-		builder.append(", release_date=");
-		builder.append(release_date);
-		builder.append(", price=");
-		builder.append(price);
-		builder.append("]");
-		return builder.toString();
+		return "Product [product_id=" + product_id + ", buyer_id=" + buyer_id + ", seller_id=" + seller_id
+				+ ", product_name=" + product_name + ", brand=" + brand + ", release_date=" + release_date + ", price="
+				+ price + "]";
 	}
+	
+	
 }

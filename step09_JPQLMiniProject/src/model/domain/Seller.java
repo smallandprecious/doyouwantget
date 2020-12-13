@@ -27,8 +27,20 @@ initialValue=1, allocationSize=50)
 public class Seller {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="SELLER_SEQ_GEN")
 	@Id
-	@Column(name="member_id")
-	private String member_id;
+	//@ManyToOne()
+	@Column(name="seller_id")
+	private String seller_id;
+	
+	@Column(name="name")
+	private String name;
+	
+
+	@Column(name="phone_number")
+	private String phone_number;
+	
+	@Column(name="address")
+	private String address;
+	
 	
 	@Column(name="product_size")
 	private int product_size;
@@ -38,14 +50,8 @@ public class Seller {
 	
 	@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("Seller [member_id=");
-		builder.append(member_id);
-		builder.append(", product_size=");
-		builder.append(product_size);
-		builder.append(", product_price=");
-		builder.append(product_price);
-		builder.append("]");
-		return builder.toString();
+		return "Seller [seller_id=" + seller_id + ", name=" + name + ", phone_number=" + phone_number + ", address="
+				+ address + ", product_size=" + product_size + ", product_price=" + product_price + "]";
 	}
+	
 }

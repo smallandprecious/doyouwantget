@@ -3,8 +3,6 @@
 	<persistence-unit name="step09_JPQLMiniProject">
 		
 		<class>model.domain.Buyer</class>
-		<class>model.domain.Member</class>
-		<class>model.domain.Order</class>
 		<class>model.domain.Product</class>
 		<class>model.domain.Seller</class>
 	

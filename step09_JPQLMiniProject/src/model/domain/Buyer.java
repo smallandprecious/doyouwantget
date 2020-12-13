@@ -27,20 +27,31 @@ initialValue=1, allocationSize=50)
 public class Buyer {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="BUYER_SEQ_GEN")
 	@Id
-	@Column(name="member_id")
-	private String member_id;
+	//@ManyToOne()
+	@Column(name="buyer_id")
+	private String buyer_id;
 	
-	@Column(name="product_size")
-	private int product_size;
+	@Column(name="name")
+	private String name;
+	
+	@Column(name="phone_number")
+	private String phone_number;
+	
+	@Column(name="address")
+	private String address;
+	
+	@Column(name="buyer_size")
+	private int buyer_size;
+	
+	@Column(name="hope_price")
+	private int hope_price;
 
 	@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("Buyer [member_id=");
-		builder.append(member_id);
-		builder.append(", product_size=");
-		builder.append(product_size);
-		builder.append("]");
-		return builder.toString();
+		return "Buyer [buyer_id=" + buyer_id + ", name=" + name + ", phone_number=" + phone_number + ", address="
+				+ address + ", buyer_size=" + buyer_size + ", hope_price=" + hope_price + "]";
 	}
+	
+
+	
 }
