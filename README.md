@@ -37,7 +37,7 @@
 
 
 <div>
-    
+    <img width="800" src=![doyouwanttoget diagram](https://user-images.githubusercontent.com/73386460/102003110-741d1480-3d46-11eb-80bf-8e190d0dc815.PNG)>
 </div>
 
 --------------
