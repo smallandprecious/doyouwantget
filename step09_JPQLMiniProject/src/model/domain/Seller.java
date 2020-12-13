@@ -15,12 +15,14 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@ToString(exclude="products")
 
 @Entity
 @Table(name = "Seller")
@@ -37,15 +39,17 @@ public class Seller {
 
 	@Column(name="seladdress")
 	private String seladdress;
-	
-	@OneToMany(mappedBy = "prodid")
+
+	@OneToMany(mappedBy = "Sellerid")
 	private List<Product> products;
 
-	@Override
-	public String toString() {
-		return "Seller [sellid=" + sellid + ", selname=" + selname + ", selphonum=" + selphonum + ", seladdress="
-				+ seladdress + ", products=" + products + "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "Seller [sellid=" + sellid + ", selname=" + selname + ","
+//				+ " selphonum=" + selphonum + ", seladdress="
+//				+ seladdress + ", products=" + products + "]";
+//	}
+	
 
 }
 	
