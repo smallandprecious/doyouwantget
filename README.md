@@ -170,26 +170,26 @@ insert into product values (41,'null','null','Supreme x Stone Island Corduroy Ja
 insert into product values (42,'null','null','adidas x LEGO ZX 8000','265','adidas','2008-05-05','169000','200000');
 
 -- buyer INSERT
-insert into buyer values ('ok1231','23','권오민','010-1234-2345','인천광역시 연수구 송도동');
-insert into buyer values ('rabbit777','4','권희성','010-1234-2346','경기도 부천시 소사구 옥길동');
-insert into buyer values ('wonder486','28','김민건','010-1234-2347','인천광역시 남동구 구월1동');
-insert into buyer values ('ilovecats2','6','김성호','010-1234-2348','경기도 시흥시 정왕3동');
-insert into buyer values ('gajagib98','7','조윤혜','010-1234-2349','경기도 안산시 단원구 고잔동');
-insert into buyer values ('imangel1234','19','김재웅','010-1234-2350','경기도 안산시 상록구 본오3동');
-insert into buyer values ('basketballs2','22','김준형','010-1234-2351','강원도 철원군 김화읍');
-insert into buyer values ('waterisbest234','1','김창훈','010-1234-2352','경기도 안양시 동안구 달안동');
-insert into buyer values ('loveletter','7','양호준','010-1234-2353','경기도 분당구 백현동');
+insert into buyer values ('ok1231',23,'권오민','010-1234-2345','인천광역시 연수구 송도동');
+insert into buyer values ('rabbit777',4,'권희성','010-1234-2346','경기도 부천시 소사구 옥길동');
+insert into buyer values ('wonder486',28,'김민건','010-1234-2347','인천광역시 남동구 구월1동');
+insert into buyer values ('ilovecats2',6,'김성호','010-1234-2348','경기도 시흥시 정왕3동');
+insert into buyer values ('gajagib98',7,'조윤혜','010-1234-2349','경기도 안산시 단원구 고잔동');
+insert into buyer values ('imangel1234',19,'김재웅','010-1234-2350','경기도 안산시 상록구 본오3동');
+insert into buyer values ('basketballs2',22,'김준형','010-1234-2351','강원도 철원군 김화읍');
+insert into buyer values ('waterisbest234',1,'김창훈','010-1234-2352','경기도 안양시 동안구 달안동');
+insert into buyer values ('loveletter',7,'양호준','010-1234-2353','경기도 분당구 백현동');
 
 -- seller INSERT
-insert into seller values ('yoons1234','28','최지수','010-1235-7896','충청남도 공주시 공주읍');
-insert into seller values ('gibgagopa','38','장문희','010-1235-7897','강원도 원주시 지정면');
-insert into seller values ('jordansarang','19','염아정','010-1235-7898','충청북도 충주시 칠금동');
-insert into seller values ('ename7535','8','김연지','010-1235-7895','전라남도 강진군 강진읍');
-insert into seller values ('real-jorden','33','박민영','010-1235-7894','제주특별시 제주시 애월읍');
-insert into seller values ('apple342','23','고은비','010-1235-7893','전라북도 고창군 고창읍');
-insert into seller values ('baegopa55','22','이정민','010-1235-7892','경상남도 창원시 가포동');
-insert into seller values ('jordanwant','1','차왕현','010-1235-7891','부산광역시 사직구 사직동');
-insert into seller values ('noniwa','6','최태열','010-1235-7890','경기도 성남시 수정구 태평동');
+insert into seller values ('yoons1234',28,'최지수','010-1235-7896','충청남도 공주시 공주읍');
+insert into seller values ('gibgagopa',38,'장문희','010-1235-7897','강원도 원주시 지정면');
+insert into seller values ('jordansarang',19,'염아정','010-1235-7898','충청북도 충주시 칠금동');
+insert into seller values ('ename7535',8,'김연지','010-1235-7895','전라남도 강진군 강진읍');
+insert into seller values ('real-jorden',33,'박민영','010-1235-7894','제주특별시 제주시 애월읍');
+insert into seller values ('apple342',23,'고은비','010-1235-7893','전라북도 고창군 고창읍');
+insert into seller values ('baegopa55',22,'이정민','010-1235-7892','경상남도 창원시 가포동');
+insert into seller values ('jordanwant',1,'차왕현','010-1235-7891','부산광역시 사직구 사직동');
+insert into seller values ('noniwa',6,'최태열','010-1235-7890','경기도 성남시 수정구 태평동');
 
 COMMIT;
 ```
@@ -208,35 +208,34 @@ COMMIT;
     2)  Buyer CRUD를 구현하는 과정에서 prodid를 참조만 하면 알 수 없는 오류가 났고, 
         부모와 자식테이블이 뒤바뀌었기 때문이라는 것을 깨달음
     3)  수정 후 : Product(자식) <- Buyer, Seller (부모)
-                  product -> sellid , buyid (fk) 추가 
-		  
+                  product -> sellid , buyid(FK) 추가
+
+
 2. OrderCRUDTest 실행의 문제점 
 
 >1. 실행결과 오류가 뜨진 않지만 결과값이 나오지 않음 
-    db에는 존재하고 있어서 아직 해결방법을 알지 못함 
-
+    DB에는 존재하고 있어서 아직 해결방법을 알지 못함
 ---    
 
 ## INSPIRATION
 
-
 3. 각자 힘들었던 점 
 
-장문희 
+**장문희**
 
 각 테이블 간 매핑관계에서 있었던 오류 수정 전, 잘못된 매핑관계로 product id를 불러오지 못하는 것이 가장 힘들었습니다.
 product id를 불러오지 못하니 CRUD에서 각종 시나리오를 구현하는 데에 큰 장애물이 되었기 때문입니다. 
 다행히 해결은 되었지만 처음 테이블을 구성할때 부모자식 관계를 적절히 선택하는 것은 신중해야 한다는 것을 깨닫는 계기가 되었습니다
 
-조윤혜 
+**조윤혜**
 
 테이블설계의 중요성을 알게되었습니다. 
 
-최지수
+**최지수**
 
 각 테이블 간 매핑에 있어서 관계도를 생각하지 않고 아이디어를 기반으로 생각하고 구상하다 보니 테이블 매핑이 복잡해져서 erd diagram을 구성하는 내내 고민하고 힘들었던 것 같습니다.
 
-이민재 
+**이민재**
 
 기존 프로젝트와는 다르게 Table을 나누는 과정이 쉽지가 않았습니다.
 실제로 중고거래 애플리케이션을 많이 써보았음에도 이를 DB화하는 것부터
