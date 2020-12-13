@@ -1,0 +1,40 @@
+DROP TABLE product cascade constraints;
+
+DROP TABLE buyer cascade constraints;
+
+DROP TABLE seller cascade constraints;
+
+
+CREATE TABLE product (
+	product_id	         VARCHAR2(30)		PRIMARY KEY,
+	product_name	       VARCHAR2(200)		NOT NULL,
+	brand	               VARCHAR2(100)		NOT NULL,
+	release_date	       VARCHAR2(20)		NOT NULL,
+	price	               number(7)		      NOT NULL
+);
+
+CREATE TABLE buyer (
+	buyer_id  	        VARCHAR2(50)		PRIMARY KEY,
+	product_id	        VARCHAR2(50)		NOT NULL,
+	buy_name	          VARCHAR2(50)		NOT NULL,
+	buy_pho_num	        VARCHAR2(50)		NOT NULL,
+	buy_address	        VARCHAR2(50)		NOT NULL,
+	buy_size            number(3)		    NOT NULL,
+	hope_price	        number(7)		    NOT NULL
+);
+
+CREATE TABLE seller (
+	seller_id       VARCHAR2(50)		PRIMARY KEY,
+	product_id	    VARCHAR2(50)		NOT NULL,
+	sel_name	      VARCHAR2(50)		NOT NULL,
+	sel_pho_num	    VARCHAR2(50)		NOT NULL,
+	sel_address	    VARCHAR2(50)		NOT NULL,
+	product_size	  number(3)		NOT NULL,
+	resell_price	  number(7)		NOT NULL
+);
+
+ALTER TABLE buyer ADD CONSTRAINT FK_product_TO_buyer_1 FOREIGN KEY (product_id)
+REFERENCES product (product_id);
+
+ALTER TABLE seller ADD CONSTRAINT FK_product_TO_seller_1 FOREIGN KEY (product_id)
+REFERENCES product (product_id);
