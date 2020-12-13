@@ -2,7 +2,7 @@
 
 ---------------
 
-## do you want get?
+## Do you want get?
 
 ---------------
 
@@ -31,6 +31,14 @@
 --------------
 
 ### Resell Project 기능 설명
+
+--------------
+#### Modeling 
+
+
+<div>
+    <img width="800" src="https://user-images.githubusercontent.com/73386460/102003110-741d1480-3d46-11eb-80bf-8e190d0dc815.PNG">
+</div>
 
 --------------
 

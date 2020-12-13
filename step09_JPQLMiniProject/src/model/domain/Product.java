@@ -30,6 +30,22 @@ public class Product {
 	@OneToMany()
 	@Column(name="product_id")
 	private int product_id;
+	/*
+	 * CREATE TABLE product(
+    product_id VARCHAR2(30) PRIMARY KEY,
+    buyer_id VARCHAR2(20) NOT NULL,
+    seller_id VARCHAR2(20) NOT NULL,
+    product_name VARCHAR2(100) NOT NULL,
+    brand VARCHAR2(30) NOT NULL,
+    release_date VARCHAR2(20) NOT NULL,
+    price NUMBER(20) NOT NULL
+);
+	 */
+	@Column(name="buyer_id")
+	private String buyer_id;
+	
+	@Column(name="seller_id")
+	private String seller_id;
 	
 	@Column(name="buyer_id")
 	private String buyer_id;
@@ -51,6 +67,7 @@ public class Product {
 
 	@Override
 	public String toString() {
+
 		return "Product [product_id=" + product_id + ", buyer_id=" + buyer_id + ", seller_id=" + seller_id
 				+ ", product_name=" + product_name + ", brand=" + brand + ", release_date=" + release_date + ", price="
 				+ price + "]";

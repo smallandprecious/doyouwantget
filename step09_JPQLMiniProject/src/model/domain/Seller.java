@@ -25,7 +25,6 @@ import lombok.Setter;
 initialValue=1, allocationSize=50)
 @Entity
 public class Seller {
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="SELLER_SEQ_GEN")
 	@Id
 	//@ManyToOne()
 	@Column(name="seller_id")
@@ -41,17 +40,19 @@ public class Seller {
 	@Column(name="address")
 	private String address;
 	
-	
+
 	@Column(name="product_size")
 	private int product_size;
 	
-	@Column(name="product_price")
-	private int product_price;
-	
+	@Column(name="resell_price")
+	private int resell_price;
+
 	@Override
 	public String toString() {
+
 		return "Seller [seller_id=" + seller_id + ", name=" + name + ", phone_number=" + phone_number + ", address="
 				+ address + ", product_size=" + product_size + ", product_price=" + product_price + "]";
 	}
 	
+
 }

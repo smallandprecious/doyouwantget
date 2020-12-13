@@ -1,6 +1,7 @@
 package model.domain;
 
 import javax.persistence.Column;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,11 +22,8 @@ import lombok.Setter;
 @NoArgsConstructor
 @Builder
 
-@SequenceGenerator(name="BUYER_SEQ_GEN", sequenceName="BUYER_SEQ_ID",
-initialValue=1, allocationSize=50)
 @Entity
 public class Buyer {
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="BUYER_SEQ_GEN")
 	@Id
 	//@ManyToOne()
 	@Column(name="buyer_id")
@@ -42,16 +40,18 @@ public class Buyer {
 	
 	@Column(name="buyer_size")
 	private int buyer_size;
-	
+	>>>>>>> e31ab8d122068aa7f293b5c2f52fe0784e0df1dc
 	@Column(name="hope_price")
 	private int hope_price;
 
 	@Override
 	public String toString() {
+
 		return "Buyer [buyer_id=" + buyer_id + ", name=" + name + ", phone_number=" + phone_number + ", address="
 				+ address + ", buyer_size=" + buyer_size + ", hope_price=" + hope_price + "]";
 	}
-	
+		
 
-	
+	}
+
 }
