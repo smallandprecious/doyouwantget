@@ -18,46 +18,32 @@ import model.domain.Product;
 import util.PublicCommon;
 
 public class BuyerCRUDTest {
-	
+
 	//create
-		public static void addBuyer(String buyid, String buyname, String buyphonum, String buyaddress, EntityManager em)  {
-			Buyer b = Buyer.builder().buyid(buyid).buyname(buyname).buyphonum(buyphonum).buyaddress(buyaddress).build();
-			em.persist(b);
-		}
+	public static void addBuyer(String buyid, String buyname, String buyphonum, String buyaddress, EntityManager em)  {
+		Buyer b = Buyer.builder().buyid(buyid).buyname(buyname).buyphonum(buyphonum).buyaddress(buyaddress).build();
+		em.persist(b);
+	}
 	//select
-		
-		public static void findAll(EntityManager em)  {
-			List<Buyer> b = em.createNativeQuery("select * from Buyer", Buyer.class).getResultList();
-			b.forEach(v-> System.out.println(v));
-		}
-		
-		public static void findBuyerId(int buyid , EntityManager em)  {
-			List<Buyer> b = em.createNativeQuery("select * from Buyer where buyid= ?", Buyer.class).setParameter(1, buyid)
-					.getResultList();
-			b.forEach(v-> System.out.println(v));
-		}
-		
-		public static void findBuyerName(String buyname , EntityManager em)  {
-			List<Buyer> b = em.createNativeQuery("select * from Buyer where buyid= ?", Buyer.class).setParameter(1, buyname)
-					.getResultList();
-			b.forEach(v-> System.out.println(v));
-		}
-		
-		// 구매자가 원하는 상품 검색 후, 존재하는 사이즈 목록 보기
-		
-		
-		
-		public static void updateBuyer(int buyid, String buyname, String buyphonum, String buyaddress, EntityManager em){
-			
-		}
-		//delete 
-		public static void deletebuyer(int buyerid, EntityManager em)  {
-			
-		}
-		
-		public static void getProducts(int buyid, EntityManager em) {
-			
-		}
+
+	public static void findAll(EntityManager em)  {
+		List<Buyer> b = em.createNativeQuery("select * from Buyer", Buyer.class).getResultList();
+		b.forEach(v-> System.out.println(v));
+	}
+
+	public static void findBuyerId(int buyid , EntityManager em)  {
+		List<Buyer> b = em.createNativeQuery("select * from Buyer where buyid= ?", Buyer.class).setParameter(1, buyid)
+				.getResultList();
+		b.forEach(v-> System.out.println(v));
+	}
+
+	public static void findBuyerName(String buyname , EntityManager em)  {
+		List<Buyer> b = em.createNativeQuery("select * from Buyer where buyid= ?", Buyer.class).setParameter(1, buyname)
+				.getResultList();
+		b.forEach(v-> System.out.println(v));
+	}
+
+
 
 	//구매자 id로 해당 구매자 정보 모두 조회
 	public void findBuyer() {
@@ -72,7 +58,6 @@ public class BuyerCRUDTest {
 				System.out.println("해당 회원의 성함 : " + buyer.getBuyname());
 				System.out.println("해당 회원의 휴대폰번호 : " + buyer.getBuyphonum());
 				System.out.println("해당 회원의 주소 : " + buyer.getBuyaddress());
-				//System.out.println("해당 회원의 id : " + buyer.getProducts().getprodid());
 			}
 		} catch(Exception ex) {
 			ex.printStackTrace();
@@ -80,7 +65,7 @@ public class BuyerCRUDTest {
 			em.close();
 		}
 	}
-	
+
 	// 구매자 이사 후 배송지 변경
 	@Test
 	public void updateBuyerAddress() {
@@ -99,12 +84,12 @@ public class BuyerCRUDTest {
 			//after update
 			System.out.println("update 후 : " + buyer2);
 		}catch (Exception e) {
-		e.printStackTrace();
-	}finally {
-		em.close();
-	}
+			e.printStackTrace();
+		}finally {
+			em.close();
 		}
-	
+	}
+
 	//회원탈퇴
 	public void deleteBuyer() {
 		EntityManager em = PublicCommon.getEntityManager();
@@ -124,12 +109,12 @@ public class BuyerCRUDTest {
 			em.close();
 		}
 	}
-	
-	
-	
-	
-	
-	
-	}
- 
+
+
+
+
+
+
+}
+
 
