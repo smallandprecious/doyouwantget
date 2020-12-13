@@ -39,6 +39,8 @@
 
 1.  구매자가 원하는 상품 검색 후, 존재하는 사이즈 목록 보기
 
+2.  
+
 2.  구매자 이사 후 배송지 변경
 
 3.  구매자 id로 해당 구매자 정보 모두 조회
@@ -118,7 +120,7 @@
 
 ## SQL TABLE
 
-* DDL
+++++DDL
 
 ```SQL
 DROP TABLE product CASCADE CONSTRAINTS;
@@ -163,10 +165,9 @@ ALTER TABLE seller ADD CONSTRAINT FK_product_TO_seller_1 FOREIGN KEY (prodid)
 REFERENCES product (prodid);
 ```
 
-* DML
+++++DML
 
 ```sql
--- product INSERT
 insert into product values (1,'waterisbest234','jordanwant','Nike Big Swoosh Full Zip Jacket Black Volt','230','nike','1999-12-05','129000','160000');												
 insert into product values (2,'null','null','Jordan 1 x J Balvin Retro High OG','250','jordan','2005-04-15','229000','480000');												
 insert into product values (3,'null','null','adidas Dame 4 A Bathing Ape Camo','240','adidas','2018-02-17','163200','530000');												
@@ -249,40 +250,42 @@ COMMIT;
     2)  Buyer CRUD를 구현하는 과정에서 prodid를 참조만 하면 알 수 없는 오류가 났고, 
         부모와 자식테이블이 뒤바뀌었기 때문이라는 것을 깨달음
     3)  수정 후 : Product(자식) <- Buyer, Seller (부모)
-                  product -> sellid , buyid (fk) 추가  
+                  product -> sellid , buyid (fk) 추가 
+		  
+2. OrderCRUDTest 실행의 문제점 
+
+>1. 실행결과 오류가 뜨진 않지만 결과값이 나오지 않음 
+    db에는 존재하고 있어서 아직 해결방법을 알지 못함 
 
 2. 각자 힘들었던 점 
 
-장문희
-```
+장문희 
+
 각 테이블 간 매핑관계에서 있었던 오류 수정 전, 잘못된 매핑관계로 product id를 불러오지 못하는 것이 가장 힘들었습니다.
 product id를 불러오지 못하니 CRUD에서 각종 시나리오를 구현하는 데에 큰 장애물이 되었기 때문입니다. 
 다행히 해결은 되었지만 처음 테이블을 구성할때 부모자식 관계를 적절히 선택하는 것은 신중해야 한다는 것을 깨닫는 계기가 되었습니다
-```
 
 조윤혜 
-```
-테이블설계를 할때 테이블 설계가 이해가 가지 않았는데 코드를 짜려고 하니까 이해가 가지 않고 오류가 알 수 없는 오류가 나와서 힘들었습니다. 
+
 테이블설계의 중요성을 알게되었습니다. 
-```
 
 최지수
-```
+
 각 테이블 간 매핑에 있어서 관계도를 생각하지 않고 아이디어를 기반으로 생각하고 구상하다 보니 테이블 매핑이 복잡해져서 erd diagram을 구성하는 내내 고민하고 힘들었던 것 같습니다.
-```
 
-이민재
-```
+이민재 
+
 기존 프로젝트와는 다르게 Table을 나누는 과정이 쉽지가 않았습니다.
-
 실제로 중고거래 애플리케이션을 많이 써보았음에도 이를 DB화하는 것부터
 PK, FK을 어떤 Table에 그리고 어떤 Column에 위치해야 하는지 위치선정부터
 많이 고민을 했던 것 같습니다. 이 부분에서 상당히 시간을 할애한 것 같아
 대단히 아쉬운 Project 였습니다.
-
 의도한 바로는 모든 Query 문을 사용하고 싶었지만, 결국에는 기존 Review에 사용했던
-내용을 복붙하는 수준에 그치고 말았습니다. 같이 고생해 준 저희 팀원에게 진심으로
+내용을 복붙하는 수준에 그치고 말았습니다... 같이 고생해 준 저희 팀원에게 진심으로
 죄송하다는 말씀을 드리면서 마무리하겠습니다.
-```
+
+
+
+
 
 
