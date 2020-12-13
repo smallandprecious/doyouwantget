@@ -2,13 +2,13 @@
 
 ---------------
 
-## Do you want get?
+## Do you want to get?
 
 ---------------
 
 > 안녕하세요!
 >> **작소모** 팀(작고 소중한 모임)
->>> **이민재, 장문희, 조윤희, 최지수** 입니다.
+>>> **이민재, 장문희, 조윤혜, 최지수** 입니다.
 
 --------------
 
@@ -37,7 +37,7 @@
 
 
 <div>
-    <img width="800" src="https://user-images.githubusercontent.com/73386460/102003110-741d1480-3d46-11eb-80bf-8e190d0dc815.PNG">
+    <img width="800" src="https://user-images.githubusercontent.com/73386460/102009493-17881c80-3d7b-11eb-9519-f9fe447b0689.PNG">
 </div>
 
 --------------
