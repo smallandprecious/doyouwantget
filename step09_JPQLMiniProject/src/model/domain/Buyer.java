@@ -3,6 +3,7 @@ package model.domain;
 import javax.persistence.Column;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -26,8 +27,7 @@ import lombok.Setter;
 @Entity
 public class Buyer {
 	@Id
-	//@ManyToOne()
-	@JoinColumn(name="buyer_id")
+	@Column(name="buyer_id")
 	private String buyer_id;
 	
 	@Column(name="name")
@@ -44,6 +44,10 @@ public class Buyer {
 	
 	@Column(name="hope_price")
 	private int hope_price;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "product_id")
+	private Product product_id;
 
 	@Override
 	public String toString() {
