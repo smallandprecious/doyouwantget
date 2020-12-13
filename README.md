@@ -1,16 +1,16 @@
 # Resell Project
 
----------------
+---
 
 ## Do you want to get?
 
----------------
+---
 
 > 안녕하세요!
 >> **작소모** 팀(작고 소중한 모임)
 >>> **이민재, 장문희, 조윤혜, 최지수** 입니다.
 
---------------
+---
 
 ### 프로젝트 계획 이유
 
@@ -20,7 +20,7 @@
 
 아래 자료는 현 시점, 전세계 밀레니얼 및 Z세대를 중심으로 커지고 있는 스니커즈 리셀 시장의 규모를 나타내는 자료입니다.
 
--------------
+---
 
 #### - Resell 관련 - 전세계 스니커즈 리셀 시장 규모
 
@@ -28,14 +28,15 @@
     <img width="800" src="https://user-images.githubusercontent.com/73863771/102001950-f43d7d00-3d3a-11eb-9d51-95bc2f9aaea3.png">
 </div>
 
---------------
+---
+
 ## Service 
 
---------------
+---
 
 #### [Buyer, 구매자 시나리오]
 
--------------
+---
 
 1.  구매자가 원하는 상품 검색 저장하고 리스트를 확인한다.
 
@@ -43,7 +44,7 @@
 
 3.  구매자 id로 해당 구매자 정보 모두 조회한다.
 
---------------
+---
 
 #### [Seller, 판매자 시나리오]
 
@@ -53,7 +54,7 @@
 
 3. 판매하던 상품이 다시 유행이 되어 소장하기 위해서 판매상품을 삭제한다. 
 
-----------------
+---
 
 #### [Order, 구매 시나리오]
 
@@ -63,31 +64,28 @@
 
 3. 사고싶은 상품이 나와 사이즈가 맞다면 구매를 진행한다. 
 
-----------------
+---
 
 ### Resell Project 기능 설명
 
---------------
-#### Structure
+---
 
+#### Structure
 
 <div>
     <img width="800" src="https://user-images.githubusercontent.com/73386460/102021241-d2d3a400-3dc1-11eb-8f59-a95aa82b25bf.PNG">
 </div>
 
---------------
+---
 
 ## SQL TABLE
 
-++++DDL
+* DDL
 
 ```SQL
 DROP TABLE product CASCADE CONSTRAINTS;
-
 DROP TABLE buyer CASCADE CONSTRAINTS;
-
 DROP TABLE seller CASCADE CONSTRAINTS;
-
 
 CREATE TABLE product (
 	prodid	        NUMBER(10)	     PRIMARY KEY,
@@ -124,9 +122,10 @@ ALTER TABLE seller ADD CONSTRAINT FK_product_TO_seller_1 FOREIGN KEY (prodid)
 REFERENCES product (prodid);
 ```
 
-++++DML
+* DML
 
 ```sql
+-- product INSERT
 insert into product values (1,'waterisbest234','jordanwant','Nike Big Swoosh Full Zip Jacket Black Volt','230','nike','1999-12-05','129000','160000');												
 insert into product values (2,'null','null','Jordan 1 x J Balvin Retro High OG','250','jordan','2005-04-15','229000','480000');												
 insert into product values (3,'null','null','adidas Dame 4 A Bathing Ape Camo','240','adidas','2018-02-17','163200','530000');												
@@ -195,7 +194,7 @@ insert into seller values ('noniwa','6','최태열','010-1235-7890','경기도 �
 COMMIT;
 ```
 
-------------
+---
 
 ## ISSUE
 <div> 
@@ -215,12 +214,10 @@ COMMIT;
 
 >1. 실행결과 오류가 뜨진 않지만 결과값이 나오지 않음 
     db에는 존재하고 있어서 아직 해결방법을 알지 못함 
-    
 
-------------    
+---    
 
 ## INSPIRATION
-
 
 
 3. 각자 힘들었던 점 
@@ -249,9 +246,4 @@ PK, FK을 어떤 Table에 그리고 어떤 Column에 위치해야 하는지 위�
 의도한 바로는 모든 Query 문을 사용하고 싶었지만, 결국에는 기존 Review에 사용했던
 내용을 복붙하는 수준에 그치고 말았습니다... 같이 고생해 준 저희 팀원에게 진심으로
 죄송하다는 말씀을 드리면서 마무리하겠습니다.
-
-
-
-
-
 
