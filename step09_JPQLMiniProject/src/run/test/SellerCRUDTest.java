@@ -7,7 +7,8 @@ import model.domain.Seller;
 import util.PublicCommon;
 
 public class SellerCRUDTest {
-
+	
+	//판매자가 상품 가격 업데이트
 	public void updateSeller() {
 		EntityManager em = PublicCommon.getEntityManager();
 		EntityTransaction tx = em.getTransaction();
@@ -30,6 +31,26 @@ public class SellerCRUDTest {
 		em.close();
 	}
 }
+	
+	//상품이 팔린 후 해당 상품 삭제
+	public void deleteSeller() {
+		EntityManager em = PublicCommon.getEntityManager();
+		EntityTransaction tx = em.getTransaction();
+		try {
+			tx.begin();
+			Seller seller = em.find(Seller.class, "yoons1234");
+			if(seller != null) {
+				em.remove(seller);
+			}else {
+				System.out.println("삭제하려는 상품이 존재하지 않습니다.");
+			}
+			tx.commit();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			em.close();
+		}
+	}
 	
 
 }
