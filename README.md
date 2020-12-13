@@ -121,31 +121,31 @@ DROP TABLE seller CASCADE CONSTRAINTS;
 
 
 CREATE TABLE product (
-	prodid	        NUMBER(10)		PRIMARY KEY,
-  buyid           VARCHAR2(20),
-  sellerid        VARCHAR2(20),    
-	prodname	      VARCHAR2(255)	NOT NULL,
-	prodsize        NUMBER(3)		  NOT NULL,
-	brand	          VARCHAR2(100)	NOT NULL,
-	release_date    VARCHAR2(20)		NOT NULL,
-	price	          NUMBER(10)		  NOT NULL,
-  resellprice	    NUMBER(10)		  NOT NULL
+	prodid	        NUMBER(10)	     PRIMARY KEY,
+        buyid           VARCHAR2(20),
+        sellerid        VARCHAR2(20),    
+	prodname	VARCHAR2(255)	      NOT NULL,
+	prodsize        NUMBER(3)	      NOT NULL,
+	brand	        VARCHAR2(100)	      NOT NULL,
+	release_date    VARCHAR2(20)	      NOT NULL,
+	price	        NUMBER(10)            NOT NULL,
+        resellprice	NUMBER(10)           NOT NULL
 );
 
 CREATE TABLE buyer (
 	buyid  	         VARCHAR2(50)		PRIMARY KEY,
 	prodid	         NUMBER(10)		NOT NULL,
 	buyname	         VARCHAR2(50)		NOT NULL,
-	buyphonum	       VARCHAR2(50)		NOT NULL,
-	buyaddress	     VARCHAR2(50)		NOT NULL
+	buyphonum	 VARCHAR2(50)		NOT NULL,
+	buyaddress	 VARCHAR2(50)		NOT NULL
 );
 
 CREATE TABLE seller (
 	sellid            VARCHAR2(50)		PRIMARY KEY,
 	prodid	          NUMBER(10)		NOT NULL,
 	selname	          VARCHAR2(50)		NOT NULL,
-	selphonum	        VARCHAR2(50)		NOT NULL,
-	seladdress      	VARCHAR2(50)		NOT NULL
+	selphonum	  VARCHAR2(50)		NOT NULL,
+	seladdress        VARCHAR2(50)		NOT NULL
 );
 
 ALTER TABLE buyer ADD CONSTRAINT FK_product_TO_buyer_1 FOREIGN KEY (prodid)
@@ -157,6 +157,7 @@ REFERENCES product (prodid);
 
 ++++DML
 
+'''sql
 insert into product values (1,'waterisbest234','jordanwant','Nike Big Swoosh Full Zip Jacket Black Volt','230','nike','1999-12-05','129000','160000');												
 insert into product values (2,'null','null','Jordan 1 x J Balvin Retro High OG','250','jordan','2005-04-15','229000','480000');												
 insert into product values (3,'null','null','adidas Dame 4 A Bathing Ape Camo','240','adidas','2018-02-17','163200','530000');												
