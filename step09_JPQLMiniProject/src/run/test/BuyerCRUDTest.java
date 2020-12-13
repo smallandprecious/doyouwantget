@@ -45,7 +45,7 @@ public class BuyerCRUDTest {
 //		}
 //	}
 	
-	// select
+	// 구매자가 원하는 상품 검색 후, 존재하는 사이즈 목록 보기
 	public void findsize() {
 		EntityManager em = PublicCommon.getEntityManager();
 		EntityTransaction tx = em.getTransaction();
