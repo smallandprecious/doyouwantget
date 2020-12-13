@@ -1,5 +1,8 @@
 package run.test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
@@ -16,74 +19,46 @@ import util.PublicCommon;
 
 public class BuyerCRUDTest {
 	
-
-	
-	/*
-	 * 	public static void findEmployeebyId(EntityManager em, int eid) {
-		Employee employee = em.find(Employee.class, eid);
-
-		if (employee != null) {
-			System.out.println(employee);
-		} else {
-			System.out.println("해당 id의 직원은 미존재합니다");
+	//create
+		public static void addBuyer(String buyid, String buyname, String buyphonum, String buyaddress, EntityManager em)  {
+			Buyer b = Buyer.builder().buyid(buyid).buyname(buyname).buyphonum(buyphonum).buyaddress(buyaddress).build();
+			em.persist(b);
 		}
-	}
-	 */
-	// 구매자가 원하는 상품 검색 후, 해당상품 판매자 보기
-	
-//	public static void findProdSize(EntityManager em, String prodname) {
-//		Product product = em.find(entityClass, primaryKey)
-//		String jpql = "select p.size from Product p where p.prodname='Nike Big Swoosh Full Zip Jacket Black Volt'";
-//		
-//	}
-//	
-//	@Test
-//	public void findsize() {
-//		EntityManager em = PublicCommon.getEntityManager();
-//		EntityTransaction tx = em.getTransaction();
-//		try {
-//			tx.begin();
-//			Buyer buyer = em.find(Buyer.class, "waterisbest234");
-////			Product product = em.createQuery("select p.sellers from Product p where p.product_id="+1);
-//			Seller seller = em.find(Seller.class, primaryKey)
-//			
-//			if(buyer != null) {
-//				System.out.println("buyer_id = " + buyer.getBuyer_id() + "\n" + "product_id = " + );
-//			}else {
-//				System.out.println("검색하신 상품의 사이즈 목록이 없습니다");
-//			}
-//			tx.commit();
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}finally {
-//			em.close();
-//		}
-//	}
-	// 구매자가 원하는 상품 변경
-//	@Test
-//	public void updateBuyerProduct() {
-//		EntityManager em = PublicCommon.getEntityManager();
-//		EntityTransaction tx = em.getTransaction();
-//		try {		
-//			tx.begin();
-//			Buyer buyer1 = em.find(Buyer.class, "ok1231");
-//			Product productid = buyer1.getProducts();
-//		
-//			if(buyer1 != null) {
-//				//before update
-//				System.out.println("업데이트 전 : " + buyer1);
-//				buyer1.setprodid(7);
-//			}else {
-//				System.out.println("업데이트 할 상품이 없습니다.");
-//			}tx.commit();
-//			//after update
-//			System.out.println("업데이트 후 : " + buyer1);
-//		}catch (Exception e) {
-//		e.printStackTrace();
-//	}finally {
-//		em.close();
-//	}
-//		}
+	//select
+		
+		public static void findAll(EntityManager em)  {
+			List<Buyer> b = em.createNativeQuery("select * from Buyer", Buyer.class).getResultList();
+			b.forEach(v-> System.out.println(v));
+		}
+		
+		public static void findBuyerId(int buyid , EntityManager em)  {
+			List<Buyer> b = em.createNativeQuery("select * from Buyer where buyid= ?", Buyer.class).setParameter(1, buyid)
+					.getResultList();
+			b.forEach(v-> System.out.println(v));
+		}
+		
+		public static void findBuyerName(String buyname , EntityManager em)  {
+			List<Buyer> b = em.createNativeQuery("select * from Buyer where buyid= ?", Buyer.class).setParameter(1, buyname)
+					.getResultList();
+			b.forEach(v-> System.out.println(v));
+		}
+		
+		// 구매자가 원하는 상품 검색 후, 존재하는 사이즈 목록 보기
+		
+		
+		
+		public static void updateBuyer(int buyid, String buyname, String buyphonum, String buyaddress, EntityManager em){
+			
+		}
+		//delete 
+		public static void deletebuyer(int buyerid, EntityManager em)  {
+			
+		}
+		
+		public static void getProducts(int buyid, EntityManager em) {
+			
+		}
+
 	//구매자 id로 해당 구매자 정보 모두 조회
 	public void findBuyer() {
 		EntityManager em = PublicCommon.getEntityManager();

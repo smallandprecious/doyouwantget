@@ -37,8 +37,8 @@ public class Buyer {
 	@Column(name="buyaddress")
 	private String buyaddress;
 
-	@OneToMany(mappedBy = "Buyid")
-	private List<Product> products;
+//	@OneToMany(mappedBy = "Buyid")
+//	private List<Product> products;
 	
 //	@Override
 //	public String toString() {

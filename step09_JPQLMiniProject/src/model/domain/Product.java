@@ -34,11 +34,11 @@ public class Product {
 	private int prodid ;
 	
 	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name = "prodid")
+	@JoinColumn(name = "buyid")
 	private Buyer Buyid;
 
 	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name = "prodid")
+	@JoinColumn(name = "sellid")
 	private Seller Sellerid;
 	
 //	@Column(name="prodname")
