@@ -11,6 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -27,6 +28,7 @@ import lombok.Setter;
 @SequenceGenerator(name="PRODUCT_SEQ_GEN", sequenceName="PRODUCT_SEQ_ID",
 initialValue=1, allocationSize=50)
 @Entity
+@Table(name = "Product")
 public class Product {
 	@Id
 	@Column(name ="product_id")
@@ -51,7 +53,7 @@ public class Product {
 	
 	@Override
 	public String toString() {
-		return "Product [buyers=" + buyers + ", buyer_id=" + buyer_id + ", seller_id=" + seller_id + ", product_name="
+		return "Product [buyers=" + buyers  + ", product_name="
 				+ product_name + ", brand=" + brand + ", release_date=" + release_date + ", price=" + price + "]";
 	}
 
