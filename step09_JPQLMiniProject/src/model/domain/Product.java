@@ -2,7 +2,6 @@ package model.domain;
 
 import java.util.List;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,15 +23,14 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 
-
+@Builder
+@SequenceGenerator(name="PRODUCT_SEQ_GEN", sequenceName="PRODUCT_SEQ_ID",
+initialValue=1, allocationSize=50)
 @Entity
 public class Product {
 	@Id
-	@Column(name="product_id")
-	private String product_id;
-	@OneToMany(mappedBy = "product_id")
-	private List<Seller> sellers;
-	private List<Buyer> buyers;
+	@Column(name ="product_id")
+	private int product_id;
 	
 	
 	@Column(name="product_name")
@@ -47,23 +45,19 @@ public class Product {
 	@Column(name="price")
 	private int price;
 
+	@OneToMany(mappedBy = "product_id")
+	private List<Seller> sellers;
+	private List<Buyer> buyers;
+	
 	@Override
 	public String toString() {
-
-		StringBuilder builder = new StringBuilder();
-		builder.append("Product [product_id=");
-		builder.append(product_id);
-		builder.append(", product_name=");
-		builder.append(product_name);
-		builder.append(", brand=");
-		builder.append(brand);
-		builder.append(", release_date=");
-		builder.append(release_date);
-		builder.append(", price=");
-		builder.append(price);
-		builder.append("]");
-		return builder.toString();
+		return "Product [buyers=" + buyers + ", buyer_id=" + buyer_id + ", seller_id=" + seller_id + ", product_name="
+				+ product_name + ", brand=" + brand + ", release_date=" + release_date + ", price=" + price + "]";
 	}
 
 
+
+	
+	
+	
 }

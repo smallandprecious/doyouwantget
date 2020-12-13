@@ -1,11 +1,13 @@
 package model.domain;
 
 import javax.persistence.Column;
-
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 
@@ -29,18 +31,14 @@ public class Seller {
 	@Column(name="seller_id")
 	private String seller_id;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "product_id")
-	private Product product_id;
-	
 	@Column(name="sel_name")
-	private String sel_name;
-
+	private String name;
+	
 	@Column(name="sel_pho_num")
-	private String sel_pho_num;
+	private String phone_number;
 	
 	@Column(name="sel_address")
-	private String sel_address;
+	private String address;
 	
 	@Column(name="product_size")
 	private int product_size;
@@ -48,33 +46,15 @@ public class Seller {
 	@Column(name="resell_price")
 	private int resell_price;
 	
-	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "product_id")
+	private Product product_id;
 
 	@Override
 	public String toString() {
-
-		StringBuilder builder = new StringBuilder();
-		builder.append("Seller [seller_id=");
-		builder.append(seller_id);
-		builder.append(", product_id=");
-		builder.append(product_id);
-		builder.append(", sel_name=");
-		builder.append(sel_name);
-		builder.append(", sel_pho_num=");
-		builder.append(sel_pho_num);
-		builder.append(", sel_address=");
-		builder.append(sel_address);
-		builder.append(", product_size=");
-		builder.append(product_size);
-		builder.append(", resell_price=");
-		builder.append(resell_price);
-		builder.append("]");
-		return builder.toString();
-
+		return "Seller [seller_id=" + seller_id + ", name=" + name + ", phone_number=" + phone_number + ", address="
+				+ address + ", product_size=" + product_size + ", resell_price=" + resell_price + ", product_id="
+				+ product_id + "]";
 	}
-
-
-	
-	
 
 }
