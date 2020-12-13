@@ -110,7 +110,7 @@
 
 ## SQL TABLE
 
-++++DDL
+* DDL
 
 ```SQL
 DROP TABLE product CASCADE CONSTRAINTS;
@@ -155,7 +155,7 @@ ALTER TABLE seller ADD CONSTRAINT FK_product_TO_seller_1 FOREIGN KEY (prodid)
 REFERENCES product (prodid);
 ```
 
-++++DML
+* DML
 
 ```sql
 insert into product values (1,'waterisbest234','jordanwant','Nike Big Swoosh Full Zip Jacket Black Volt','230','nike','1999-12-05','129000','160000');												
