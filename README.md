@@ -2,7 +2,7 @@
 
 ---------------
 
-## do you want get?
+## Do you want get?
 
 ---------------
 
