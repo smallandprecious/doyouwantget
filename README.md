@@ -163,9 +163,10 @@ ALTER TABLE seller ADD CONSTRAINT FK_product_TO_seller_1 FOREIGN KEY (prodid)
 REFERENCES product (prodid);
 ```
 
-++++DML
+* DML
 
 ```sql
+-- product INSERT
 insert into product values (1,'waterisbest234','jordanwant','Nike Big Swoosh Full Zip Jacket Black Volt','230','nike','1999-12-05','129000','160000');												
 insert into product values (2,'null','null','Jordan 1 x J Balvin Retro High OG','250','jordan','2005-04-15','229000','480000');												
 insert into product values (3,'null','null','adidas Dame 4 A Bathing Ape Camo','240','adidas','2018-02-17','163200','530000');												
@@ -264,12 +265,17 @@ product id를 불러오지 못하니 CRUD에서 각종 시나리오를 구현하
 최지수
 각 테이블 간 매핑에 있어서 관계도를 생각하지 않고 아이디어를 기반으로 생각하고 구상하다 보니 테이블 매핑이 복잡해져서 erd diagram을 구성하는 내내 고민하고 힘들었던 것 같습니다.
 
-3. 힘들었던 실제 증거 자료
+이민재
+기존 프로젝트와는 다르게 Table을 나누는 과정이 쉽지가 않았습니다.
 
-<div>
-	<img width="500" src="https://user-images.githubusercontent.com/73863771/102021658-89388880-3dc4-11eb-88e5-c3122e95e6b8.png">
-	<img width="500" src="https://user-images.githubusercontent.com/73863771/102021656-85a50180-3dc4-11eb-9fc8-8fdd78ef8422.png">
-	<img width="500" src="https://user-images.githubusercontent.com/73863771/102021658-89388880-3dc4-11eb-88e5-c3122e95e6b8.png">	
-	<img width="500" src="https://user-images.githubusercontent.com/73863771/102022002-44622100-3dc7-11eb-8f33-36c77c3e53bb.png">
-	</div>
+실제로 중고거래 애플리케이션을 많이 써보았음에도 이를 DB화하는 것부터
+PK, FK을 어떤 Table에 그리고 어떤 Column에 위치해야 하는지 위치선정부터
+많이 고민을 했던 것 같습니다. 이 부분에서 상당히 시간을 할애한 것 같아
+대단히 아쉬운 Project 였습니다.
+
+의도한 바로는 모든 Query 문을 사용하고 싶었지만, 결국에는 기존 Review에 사용했던
+내용을 복붙하는 수준에 그치고 말았습니다. 같이 고생해 준 저희 팀원에게 진심으로
+죄송하다는 말씀을 드리면서 마무리하겠습니다.
+
+
 
