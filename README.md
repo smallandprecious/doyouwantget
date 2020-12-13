@@ -153,11 +153,11 @@ REFERENCES product (prodid);
 
 ALTER TABLE seller ADD CONSTRAINT FK_product_TO_seller_1 FOREIGN KEY (prodid)
 REFERENCES product (prodid);
-'''
+```
 
 ++++DML
 
-'''sql
+```sql
 insert into product values (1,'waterisbest234','jordanwant','Nike Big Swoosh Full Zip Jacket Black Volt','230','nike','1999-12-05','129000','160000');												
 insert into product values (2,'null','null','Jordan 1 x J Balvin Retro High OG','250','jordan','2005-04-15','229000','480000');												
 insert into product values (3,'null','null','adidas Dame 4 A Bathing Ape Camo','240','adidas','2018-02-17','163200','530000');												
@@ -224,6 +224,6 @@ insert into seller values ('jordanwant','1','차왕현','010-1235-7891','부산�
 insert into seller values ('noniwa','6','최태열','010-1235-7890','경기도 성남시 수정구 태평동');
 
 COMMIT;
-'''
+```
 
 
