@@ -40,11 +40,7 @@ public class Product {
     price NUMBER(20) NOT NULL
 );
 	 */
-	@Column(name="buyer_id")
-	private String buyer_id;
-	
-	@Column(name="seller_id")
-	private String seller_id;
+
 	
 	@Column(name="product_name")
 	private String product_name;
@@ -63,10 +59,6 @@ public class Product {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Product [product_id=");
 		builder.append(product_id);
-		builder.append(", buyer_id=");
-		builder.append(buyer_id);
-		builder.append(", seller_id=");
-		builder.append(seller_id);
 		builder.append(", product_name=");
 		builder.append(product_name);
 		builder.append(", brand=");
@@ -78,6 +70,8 @@ public class Product {
 		builder.append("]");
 		return builder.toString();
 	}
+
+
 	
 
 	}

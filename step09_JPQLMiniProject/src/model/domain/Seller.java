@@ -29,14 +29,9 @@ public class Seller {
 	@Column(name="seller_id")
 	private String seller_id;
 	
-//	CREATE TABLE seller ( 
-//			seller_id VARCHAR2(20) NOT NULL PRIMARY KEY, 
-//			sel_name VARCHAR2(20) NOT NULL, 
-//			sel_pho_num VARCHAR2(20) NOT NULL, 
-//			sel_address VARCHAR2(20) NOT NULL, 
-//			product_size NUMBER(20)	NOT NULL, 
-//			resell_price NUMBER(20) NOT NULL
-//			);
+	@Column(name="product_id")
+	private int product_id;
+	
 	@Column(name="sel_name")
 	private String sel_name;
 	
@@ -57,6 +52,8 @@ public class Seller {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Seller [seller_id=");
 		builder.append(seller_id);
+		builder.append(", product_id=");
+		builder.append(product_id);
 		builder.append(", sel_name=");
 		builder.append(sel_name);
 		builder.append(", sel_pho_num=");
@@ -70,6 +67,8 @@ public class Seller {
 		builder.append("]");
 		return builder.toString();
 	}
+
+
 	
 	
 }

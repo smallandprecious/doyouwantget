@@ -27,18 +27,10 @@ public class Buyer {
 	@Id
 	@Column(name="buyer_id")
 	private String buyer_id;
-	/*
-	 * 
-CREATE TABLE buyer ( 
-buyer_id VARCHAR2(20) PRIMARY KEY, 
-buy_name VARCHAR2(20) NOT NULL, 
-buy_pho_num VARCHAR2(20) NOT NULL, 
-buy_address VARCHAR2(20) NOT NULL, 
-buy_size NUMBER(20) NOT NULL, 
-hope_price NUMBER(20) NOT NULL
-);
-	 */
 	
+	@Column(name="product_id")
+	private int product_id;
+
 	@Column(name="buy_name")
 	private String buy_name;
 	
@@ -59,6 +51,8 @@ hope_price NUMBER(20) NOT NULL
 		StringBuilder builder = new StringBuilder();
 		builder.append("Buyer [buyer_id=");
 		builder.append(buyer_id);
+		builder.append(", product_id=");
+		builder.append(product_id);
 		builder.append(", buy_name=");
 		builder.append(buy_name);
 		builder.append(", buy_pho_num=");
@@ -72,6 +66,8 @@ hope_price NUMBER(20) NOT NULL
 		builder.append("]");
 		return builder.toString();
 	}
+
+
 
 
 
