@@ -37,23 +37,31 @@
 
 -------------
 
-1. 
+1.  구매자가 원하는 상품 검색 후, 존재하는 사이즈 목록 보기
 
-2.
+2.  구매자 이사 후 배송지 변경
 
-3. 
+3.  구매자 id로 해당 구매자 정보 모두 조회
 
 --------------
 
-#### [Seller, 판매자 시나리오]
+#### [Seller, 판매자 시나리오 part1]
 
-1.
+1. 판매자가 팔고싶은 상품을 올리기 위해 사이트에 검색한다. 
 
-2.
+2. 
 
 3. 
 
 ----------------
+#### [Seller, 판매자 시나리오 part2]
+
+1. 판매자가 자신의 물건이 너무 안팔려서 시세를 알아보기 위해 검색을 한다. 
+
+2. 현 시세에 비해 너무 가격이 높게 측정되어있다는 것을 인지하고 가격을 조정한다.
+
+----------------
+
 #### [Order, 구매 시나리오]
 
 1. BUYER가 사고싶은 상품명으로 상품을 검색을 한다 
@@ -110,7 +118,7 @@
 
 ## SQL TABLE
 
-* DDL
+++++DDL
 
 ```SQL
 DROP TABLE product CASCADE CONSTRAINTS;
@@ -155,10 +163,9 @@ ALTER TABLE seller ADD CONSTRAINT FK_product_TO_seller_1 FOREIGN KEY (prodid)
 REFERENCES product (prodid);
 ```
 
-* DML
+++++DML
 
 ```sql
--- product INSERT
 insert into product values (1,'waterisbest234','jordanwant','Nike Big Swoosh Full Zip Jacket Black Volt','230','nike','1999-12-05','129000','160000');												
 insert into product values (2,'null','null','Jordan 1 x J Balvin Retro High OG','250','jordan','2005-04-15','229000','480000');												
 insert into product values (3,'null','null','adidas Dame 4 A Bathing Ape Camo','240','adidas','2018-02-17','163200','530000');												
@@ -230,7 +237,7 @@ COMMIT;
 ------------
 
 ## INSPRATION 
-
+<div> 
 1. 잘못된 모델링 설계 
 
 >1-1. 아이디어에서 설계로 넘어갈때 복잡하게 구조를 잡음 
@@ -244,19 +251,21 @@ COMMIT;
                   product -> sellid , buyid (fk) 추가  
 
 2. 각자 힘들었던 점 
-    
-**장문희** 
+
+장문희 
 각 테이블 간 매핑관계에서 있었던 오류 수정 전, 잘못된 매핑관계로 product id를 불러오지 못하는 것이 가장 힘들었습니다.
 product id를 불러오지 못하니 CRUD에서 각종 시나리오를 구현하는 데에 큰 장애물이 되었기 때문입니다. 
 다행히 해결은 되었지만 처음 테이블을 구성할때 부모자식 관계를 적절히 선택하는 것은 신중해야 한다는 것을 깨닫는 계기가 되었습니다
 
-**조윤혜** 
+조윤혜 
 테이블설계를 할때 테이블 설계가 이해가 가지 않았는데 코드를 짜려고 하니까 이해가 가지 않고 오류가 알 수 없는 오류가 나와서 힘들었습니다. 
 테이블설계의 중요성을 알게되었습니다. 
 
-<div>
-	<img width ="500" src = "https://user-images.githubusercontent.com/73863771/102021658-89388880-3dc4-11eb-88e5-c3122e95e6b8.png">
-	<img width ="500" src = "https://user-images.githubusercontent.com/73863771/102021656-85a50180-3dc4-11eb-9fc8-8fdd78ef8422.png">
-	<img width ="500" src = "https://user-images.githubusercontent.com/73863771/102021658-89388880-3dc4-11eb-88e5-c3122e95e6b8.png">
-</div>
+최지수
+각 테이블 간 매핑에 있어서 관계도를 생각하지 않고 아이디어를 기반으로 생각하고 구상하다 보니 테이블 매핑이 복잡해져서 erd diagram을 구성하는 내내 고민하고 힘들었던 것 같습니다.
+
+
+
+
+
 
