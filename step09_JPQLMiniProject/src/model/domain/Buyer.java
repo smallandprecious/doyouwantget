@@ -29,22 +29,22 @@ public class Buyer {
 	@Id
 	@Column(name="buyer_id")
 	private String buyer_id;
-	
+
 	@Column(name="name")
 	private String name;
-	
+
 	@Column(name="buy_pho_num")
 	private String phone_number;
-	
+
 	@Column(name="buy_address")
 	private String address;
-	
+
 	@Column(name="buy_size")
 	private int buy_size;
-	
+
 	@Column(name="hope_price")
 	private int hope_price;
-	
+
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "product_id")
 	private Product product_id;
@@ -55,8 +55,7 @@ public class Buyer {
 		return "Buyer [buyer_id=" + buyer_id + ", name=" + name + ", phone_number=" + phone_number + ", address="
 				+ address + ", buy_size=" + buy_size + ", hope_price=" + hope_price + "]";
 	}
-		
 
-	}
+}
 
 

@@ -12,13 +12,7 @@ import util.PublicCommon;
 
 public class OrderCRUDTest {
 	// INSERT
-	/**
-	 * INSERT 후에는 반드시 "persistence.xml"의 
-	 * <property name="hibernate.hbm2ddl.auto" value="create" /> 부분을
-	 * <property name="hibernate.hbm2ddl.auto" value="none" />로 변경하기!
-	 */
-	
-	/*@Test
+	//@Test
 	public void createOrder() {
 		EntityManager em = PublicCommon.getEntityManager();
 		EntityTransaction tx = em.getTransaction();

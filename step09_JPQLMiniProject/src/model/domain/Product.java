@@ -31,33 +31,28 @@ public class Product {
 	@Id
 	@Column(name ="product_id")
 	private int product_id;
-	
-	
+
 	@Column(name="product_name")
 	private String product_name;
-	
+
 	@Column(name="brand")
 	private String brand;
-	
+
 	@Column(name="release_date")
 	private String release_date;
-	
+
 	@Column(name="price")
 	private int price;
 
 	@OneToMany(mappedBy = "product_id")
 	private List<Seller> sellers;
 	private List<Buyer> buyers;
-	
+
 	@Override
 	public String toString() {
-		return "Product [buyers=" + buyers + ", buyer_id=" + buyer_id + ", seller_id=" + seller_id + ", product_name="
-				+ product_name + ", brand=" + brand + ", release_date=" + release_date + ", price=" + price + "]";
+		return "Product [product_id=" + product_id + ", product_name=" + product_name + ", brand=" + brand
+				+ ", release_date=" + release_date + ", price=" + price + ", sellers=" + sellers + ", buyers=" + buyers
+				+ "]";
 	}
 
-
-
-	
-	
-	
 }
