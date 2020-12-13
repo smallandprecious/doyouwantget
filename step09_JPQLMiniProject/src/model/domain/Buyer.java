@@ -1,6 +1,7 @@
 package model.domain;
 
 import javax.persistence.Column;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,26 +22,58 @@ import lombok.Setter;
 @NoArgsConstructor
 @Builder
 
-@SequenceGenerator(name="BUYER_SEQ_GEN", sequenceName="BUYER_SEQ_ID",
-initialValue=1, allocationSize=50)
 @Entity
 public class Buyer {
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="BUYER_SEQ_GEN")
 	@Id
-	@Column(name="member_id")
-	private String member_id;
+	@Column(name="buyer_id")
+	private String buyer_id;
+	/*
+	 * 
+CREATE TABLE buyer ( 
+buyer_id VARCHAR2(20) PRIMARY KEY, 
+buy_name VARCHAR2(20) NOT NULL, 
+buy_pho_num VARCHAR2(20) NOT NULL, 
+buy_address VARCHAR2(20) NOT NULL, 
+buy_size NUMBER(20) NOT NULL, 
+hope_price NUMBER(20) NOT NULL
+);
+	 */
 	
-	@Column(name="product_size")
-	private int product_size;
+	@Column(name="buy_name")
+	private String buy_name;
+	
+	@Column(name="buy_pho_num")
+	private String buy_pho_num;
+	
+	@Column(name="buy_address")
+	private String buy_address;
+	
+	@Column(name="buy_size")
+	private int buy_size;
+	
+	@Column(name="hope_price")
+	private int hope_price;
 
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Buyer [member_id=");
-		builder.append(member_id);
-		builder.append(", product_size=");
-		builder.append(product_size);
+		builder.append("Buyer [buyer_id=");
+		builder.append(buyer_id);
+		builder.append(", buy_name=");
+		builder.append(buy_name);
+		builder.append(", buy_pho_num=");
+		builder.append(buy_pho_num);
+		builder.append(", buy_address=");
+		builder.append(buy_address);
+		builder.append(", buy_size=");
+		builder.append(buy_size);
+		builder.append(", hope_price=");
+		builder.append(hope_price);
 		builder.append("]");
 		return builder.toString();
+	}
+
+
+
 	}
 }
