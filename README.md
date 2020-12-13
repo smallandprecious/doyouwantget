@@ -25,7 +25,7 @@
 #### - Resell 관련 - 전세계 스니커즈 리셀 시장 규모
 
 <div>
-    <img width="600" src="https://user-images.githubusercontent.com/73863771/102001950-f43d7d00-3d3a-11eb-9d51-95bc2f9aaea3.png">
+    <img width="800" src="https://user-images.githubusercontent.com/73863771/102001950-f43d7d00-3d3a-11eb-9d51-95bc2f9aaea3.png">
 </div>
 
 --------------
