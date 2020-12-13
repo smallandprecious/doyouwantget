@@ -253,7 +253,9 @@ product id를 불러오지 못하니 CRUD에서 각종 시나리오를 구현하
 테이블설계를 할때 테이블 설계가 이해가 가지 않았는데 코드를 짜려고 하니까 이해가 가지 않고 오류가 알 수 없는 오류가 나와서 힘들었습니다. 
 테이블설계의 중요성을 알게되었습니다. 
 
-
-
-
+<div>
+	<img width ="500" src = "https://user-images.githubusercontent.com/73863771/102021658-89388880-3dc4-11eb-88e5-c3122e95e6b8.png">
+	<img width ="500" src = "https://user-images.githubusercontent.com/73863771/102021656-85a50180-3dc4-11eb-9fc8-8fdd78ef8422.png">
+	<img width ="500" src = "https://user-images.githubusercontent.com/73863771/102021658-89388880-3dc4-11eb-88e5-c3122e95e6b8.png">
+</div>
 
