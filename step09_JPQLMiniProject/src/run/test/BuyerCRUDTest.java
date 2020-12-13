@@ -1,10 +1,17 @@
 package run.test;
 
-import javax.persistence.EntityManager;\
+import javax.persistence.Column;
+import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+import org.junit.jupiter.api.Test;
 
 import model.domain.Buyer;
 import model.domain.Seller;
+import model.domain.Product;
 import util.PublicCommon;
 
 public class BuyerCRUDTest {
@@ -46,14 +53,17 @@ public class BuyerCRUDTest {
 //	}
 	
 	// 구매자가 원하는 상품 검색 후, 존재하는 사이즈 목록 보기
+	@Test
 	public void findsize() {
 		EntityManager em = PublicCommon.getEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		try {
 			tx.begin();
-			Buyer buyer = em.find(Seller.class, 2);
+			Buyer buyer = em.find(Buyer.class, 2);
+			Product product = em.createQuery("select p.sellers from Product p where p.product_id="+2);
+			Seller sellerid = Seller.getProduct_id();
 			if(buyer != null) {
-				System.out.println("product_id = " + Seller.getproduct_id()+ "\n" + "product_size = " + Seller.getproduct_size());
+				System.out.println("product_id = " + sellerid.getProduct_id()+ "\n" + "product_size = " + Seller.getproduct_size());
 			}else {
 				System.out.println("검색하신 상품의 사이즈 목록이 없습니다");
 			}
@@ -64,11 +74,64 @@ public class BuyerCRUDTest {
 			em.close();
 		}
 	}
+	// 구매자가 원하는 상품 변경 OR 희망가격 변경
+	@Test
+	public void updateBuyerProduct() {
+		EntityManager em = PublicCommon.getEntityManager();
+		EntityTransaction tx = em.getTransaction();
+		try {
+					
+			tx.begin();
+/			Buyer buyer1 = em.find(Buyer.class, "ok1231");
+			Product productid = buyer1.getProduct_id();
+			productid.set
+			
+			if(buyer1 != null) {
+				//before update
+				System.out.println("업데이트 전 : " + buyer1);
+				productid.setProduct_id(7);
+			}else {
+				System.out.println("업데이트 할 상품이 없습니다.");
+			}tx.commit();
+			//after update
+			System.out.println("update 후 : " + buyer1);
+		}catch (Exception e) {
+		e.printStackTrace();
+	}finally {
+		em.close();
+	}
+		}
+	
+	// 구매자가 원하는 상품 희망가격 변경
+	@Test
+	public void updateBuyerPrice() {
+		EntityManager em = PublicCommon.getEntityManager();
+		EntityTransaction tx = em.getTransaction();
+		try {
+			tx.begin();
+			Buyer buyer2 = em.find(Buyer.class, "ok1231");
+			if(buyer2 != null) {
+				//before update
+				System.out.println("업데이트 전 : " + buyer2);
+				buyer2.setHope_price(420000);
+			}else {
+				System.out.println("업데이트 할 상품이 없습니다.");
+			}tx.commit();
+			//after update
+			System.out.println("update 후 : " + buyer2);
+		}catch (Exception e) {
+		e.printStackTrace();
+	}finally {
+		em.close();
+	}
+		}
+	
+	
+	
+	
+	
+	
+	
+	}
  
-	
-	
-	
-}
-
-
 

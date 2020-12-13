@@ -29,22 +29,22 @@ public class Seller {
 	@Id
 	@Column(name="seller_id")
 	private String seller_id;
-	
+
 	@Column(name="sel_name")
 	private String name;
-	
+
 	@Column(name="sel_pho_num")
 	private String phone_number;
-	
+
 	@Column(name="sel_address")
 	private String address;
-	
+
 	@Column(name="product_size")
 	private int product_size;
-	
+
 	@Column(name="resell_price")
 	private int resell_price;
-	
+
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "product_id")
 	private Product product_id;
