@@ -1,5 +1,7 @@
 package model.domain;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -8,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 
@@ -23,38 +26,30 @@ import lombok.Setter;
 @NoArgsConstructor
 @Builder
 
-@SequenceGenerator(name="SELLER_SEQ_GEN", sequenceName="SELLER_SEQ_ID",
-initialValue=1, allocationSize=50)
 @Entity
 public class Seller {
 	@Id
-	@Column(name="seller_id")
-	private String seller_id;
+	@Column(name="sellid")
+	private String sellid;
+	
+	@Column(name="selname")
+	private String selname;
 
-	@Column(name="sel_name")
-	private String name;
+	@Column(name="selphonum")
+	private String selphonum;
 
-	@Column(name="sel_pho_num")
-	private String phone_number;
+	@Column(name="seladdress")
+	private String seladdress;
 
-	@Column(name="sel_address")
-	private String address;
-
-	@Column(name="product_size")
-	private int product_size;
-
-	@Column(name="resell_price")
-	private int resell_price;
-
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "product_id")
-	private Product product_id;
+	@OneToMany(mappedBy = "prodid")
+	private List<Product> products;
 
 	@Override
 	public String toString() {
-		return "Seller [seller_id=" + seller_id + ", name=" + name + ", phone_number=" + phone_number + ", address="
-				+ address + ", product_size=" + product_size + ", resell_price=" + resell_price + ", product_id="
-				+ product_id + "]";
+		return "Seller [sellid=" + sellid + ", selname=" + selname + ", selphonum=" + selphonum + ", seladdress="
+				+ seladdress + ", products=" + products + "]";
 	}
+	
+	
 
 }

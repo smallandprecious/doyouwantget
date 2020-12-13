@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -25,13 +26,11 @@ import lombok.Setter;
 @NoArgsConstructor
 
 @Builder
-@SequenceGenerator(name="PRODUCT_SEQ_GEN", sequenceName="PRODUCT_SEQ_ID",
-initialValue=1, allocationSize=50)
 @Entity
 public class Product {
 	@Id
-	@OneToOne
-	@Column(name ="prodid")
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name = "prodid")
 	private int prodid;
 
 	@Column(name="prodname")
@@ -51,12 +50,11 @@ public class Product {
 
 	@Column(name="resellprice")
 	private int resellprice;
-	
+
 	@Override
 	public String toString() {
-		return "Product [product_id=" + product_id + ", product_name=" + product_name + ", brand=" + brand
-				+ ", release_date=" + release_date + ", price=" + price + ", sellers=" + sellers + ", buyers=" + buyers
-				+ "]";
+		return "Product [prodid=" + prodid + ", prodname=" + prodname + ", prodsize=" + prodsize + ", brand=" + brand
+				+ ", release_date=" + release_date + ", price=" + price + ", resellprice=" + resellprice + "]";
 	}
 
 }

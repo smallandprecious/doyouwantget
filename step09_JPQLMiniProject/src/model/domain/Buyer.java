@@ -1,5 +1,7 @@
 package model.domain;
 
+import java.util.List;
+
 import javax.persistence.Column;
 
 import javax.persistence.Entity;
@@ -9,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 
@@ -27,34 +30,29 @@ import lombok.Setter;
 @Entity
 public class Buyer {
 	@Id
-	@Column(name="buyer_id")
+	@Column(name="buyid")
 	private String buyer_id;
 
-	@Column(name="name")
-	private String name;
+	@OneToMany(mappedBy = "prodid")
+	private List<Product> products;
+	
+	@Column(name="buyname")
+	private String buyname;
 
-	@Column(name="buy_pho_num")
-	private String phone_number;
+	@Column(name="buyphonum")
+	private String buyphonum;
 
-	@Column(name="buy_address")
-	private String address;
-
-	@Column(name="buy_size")
-	private int buy_size;
-
-	@Column(name="hope_price")
-	private int hope_price;
-
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "product_id")
-	private Product product_id;
+	@Column(name="buyaddress")
+	private String buyaddress;
 
 	@Override
 	public String toString() {
-
-		return "Buyer [buyer_id=" + buyer_id + ", name=" + name + ", phone_number=" + phone_number + ", address="
-				+ address + ", buy_size=" + buy_size + ", hope_price=" + hope_price + "]";
+		return "Buyer [buyer_id=" + buyer_id + ", products=" + products + ", buyname=" + buyname + ", buyphonum="
+				+ buyphonum + ", buyaddress=" + buyaddress + "]";
 	}
+
+	
+
 
 }
 
