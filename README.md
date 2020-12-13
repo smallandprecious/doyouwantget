@@ -29,6 +29,19 @@
 </div>
 
 --------------
+
+### Resell Project 기능 설명
+
+--------------
+#### Structure
+
+
+<div>
+    <img width="800" src="https://user-images.githubusercontent.com/73386460/102021241-d2d3a400-3dc1-11eb-8f59-a95aa82b25bf.PNG">
+</div>
+
+--------------
+
 ## Service 
 
 --------------
@@ -54,7 +67,7 @@
 3. 
 
 ----------------
-#### [Seller, 판매자 시나리오]
+#### [Order, 주문 시나리오]
 
 1.
 
@@ -63,19 +76,6 @@
 3. 
 
 ----------------
-
-### Resell Project 기능 설명
-
---------------
-#### Structure
-
-
-<div>
-    <img width="800" src="https://user-images.githubusercontent.com/73386460/102021241-d2d3a400-3dc1-11eb-8f59-a95aa82b25bf.PNG">
-</div>
-
---------------
-
 
 ### Buyer CRUD 구현 과정
 
@@ -230,19 +230,7 @@ COMMIT;
 
 ## INSPRATION 
 
-1. 잘못된 모델링 설계 
-
-1-1. 아이디어에서 설계로 넘어갈때 복잡하게 구조를 잡음 
-
-1-2. TABLE 간 ENTITY 설계에서 오류가 남 
-    1)  수정 전:  Product (부모) -> Buyer, Seller (자식)
-        Buyer, Seller 테이블에서 각각 필요한 product id를 참조해 상품정보를 불러옴
-    2)  Buyer CRUD를 구현하는 과정에서 prodid를 참조만 하면 알 수 없는 오류가 났고, 
-        부모와 자식테이블이 뒤바뀌었기 때문이라는 것을 깨달음
-    3)  수정 후 : Product(자식) <- Buyer, Seller (부모)
-                  product -> sellid , buyid (fk) 추가  
-
-2. 각자 힘들었던 점 
-
-
-
+<div><img width="250" src = "https://user-images.githubusercontent.com/73863771/102021653-8178e400-3dc4-11eb-9a4c-18a5188283ac.png"></div>
+<div><img width="250" src = "https://user-images.githubusercontent.com/73863771/102021656-85a50180-3dc4-11eb-9fc8-8fdd78ef8422.png"></div>
+<div><img width="250" src = "https://user-images.githubusercontent.com/73863771/102021658-89388880-3dc4-11eb-88e5-c3122e95e6b8.png"></div>
+	
