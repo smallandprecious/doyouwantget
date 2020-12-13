@@ -31,34 +31,41 @@ import lombok.Setter;
 @Table(name = "Product")
 public class Product {
 	@Id
+	private int prodid ;
+	
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name = "prodid")
-	private int prodid;
+	private Buyer Buyid;
 
-	@Column(name="prodname")
-	private String prodname;
-
-	@Column(name="prodsize")
-	private int prodsize;
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name = "prodid")
+	private Seller Sellerid;
 	
-	@Column(name="brand")
-	private String brand;
-
-	@Column(name="release_date")
-	private String release_date;
-	
-	@Column(name="price")
-	private int price;
-
-
-	@Column(name="resellprice")
-	private int resellprice;
-
-	@Override
-	public String toString() {
-		return "Product [prodid=" + prodid + ", prodname=" + prodname + ", prodsize=" + prodsize + ", brand=" + brand
-				+ ", release_date=" + release_date + ", price=" + price + ", resellprice=" + resellprice + "]";
-	}
+//	@Column(name="prodname")
+//	private String prodname;
+//
+//	@Column(name="prodsize")
+//	private int prodsize;
+//	
+//	@Column(name="brand")
+//	private String brand;
+//
+//	@Column(name="release_date")
+//	private String release_date;
+//	
+//	@Column(name="price")
+//	private int price;
+//
+//
+//	@Column(name="resellprice")
+//	private int resellprice;
+//
+//	@Override
+//	public String toString() {
+//		return "Product [prodid=" + prodid + ", prodname=" + prodname + ", prodsize=" + 
+//	prodsize + ", brand=" + brand+ ", release_date=" + release_date + 
+//	", price=" + price + ", resellprice=" + resellprice + "]";
+//	}
 
 
 }
