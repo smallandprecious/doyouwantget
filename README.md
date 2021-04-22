@@ -70,7 +70,7 @@
 
 ---
 
-### Structure
+### Structure 
 
 <div>
     <img width="800" src="https://user-images.githubusercontent.com/73386460/115667704-1a29fc80-a381-11eb-8f7b-83c6a5034821.JPG">
@@ -209,6 +209,9 @@ COMMIT;
         부모와 자식테이블이 뒤바뀌었기 때문이라는 것을 깨달음
     3)  수정 후 : Product(자식) <- Buyer, Seller (부모)
                   product -> sellid , buyid(FK) 추가
+
+
+
 
 
 2. OrderCRUDTest 실행의 문제점 
